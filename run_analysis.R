@@ -2,8 +2,7 @@
 
 library(dplyr)
 
-####PROJECT 
-setwd("C:\\Users\\danie\\Documents\\data_science_spe\\GettingData")
+#setwd("C:\\Users\\danie\\Documents\\GettingData")
 
 filename <- "Coursera_DS3_Final.zip"
 
@@ -13,14 +12,16 @@ if (!file.exists(filename)){
   download.file(fileURL, filename, method="curl")
 }  
 
-unzip(zipfile="Coursera_DS3_Final.zip")
-
+if (!file.exists("UCI HAR Dataset")) { 
+    unzip(filename) 
+}
 
 ## Reading all individual files to be used in the analysis
 
 features <- read.table("UCI HAR Dataset/features.txt", col.names = c("n","functions"))
 
 activities <- read.table("UCI HAR Dataset/activity_labels.txt", col.names = c("code", "act"))
+
 
 testSubjects <- read.table("UCI HAR Dataset/test/subject_test.txt", col.names = "subject")
 
