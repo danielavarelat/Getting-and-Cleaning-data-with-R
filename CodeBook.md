@@ -54,7 +54,7 @@ The variables that had the words "mean" or "std" on them were selected to create
 Some variables are renamed to be more informative. 
 The column with the code is changed to have the activity name instead. 
 
-#6. Tidy data set with the average of each variable for each activity and each subject
+## 6. Tidy data set with the average of each variable for each activity and each subject
  
 *newData* is created by sumarizing *data_mean_std* taking the means of each variable for each activity and each subject (180 rows, 88 columns).
 
